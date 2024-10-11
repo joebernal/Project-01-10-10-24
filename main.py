@@ -92,20 +92,21 @@ def tokenize_code(processed_code, comments):
 
 # Print code after removing excess space and comments
 def print_processed_code(processed_code):
-    print("Code after removing excess space and comments:")
+    print("Output 1 - Code after removing excess space and comments:")
     for line in processed_code:
         print(line)
 
 # Print tokenized code, comments and total count of tokens
 def print_tokenized_code(tokens, total_tokens):
-    print("\nTokenized code in tabular form:")
+    print("\nOutput 2 - Tokens:")
+    print("-" * 30)
     for category, token_list in tokens.items():
         print(f"{category}: {', '.join(set(token_list))}")  # Using set to avoid duplicates
     print(f"\nTotal tokens: {total_tokens}")
 
 # Main function to run program
 def main():
-    file_path = 'input.txt'
+    file_path = 'example2.txt'
     data = read_file(file_path)
 
     processed_code, comments = remove_comments_and_spaces(data)
